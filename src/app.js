@@ -2,10 +2,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import registerRouter from "./routers/registerRouter.js";
-import friendsRouter from "./routers/friendsRouter.js";
-import postRouter from "./routers/postRouter.js";
-import userRouter from "./routers/userRouter.js";
+import locationsRouter from "./routers/locationRouters.js";
+import tripRouter from "./routers/tripRouters.js";
+import accommodationRouer from "./routers/accomodationsRouters.js";
 
 dotenv.config();
 
@@ -13,10 +12,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use(registerRouter);
-app.use(friendsRouter);
-app.use(postRouter);
-app.use(userRouter);
+app.use(locationsRouter);
+app.use(accommodationRouer);
+app.use(tripRouter);
 
 
 
